@@ -1,6 +1,7 @@
 venv
 backend/healthapp/healthapp/__pycache__
 backend/healthapp/service/__pycache__
+backend/healthapp/service/migrations
 backend/healthapp/service/migrations/__pycache__
 backend/healthapp/service/users/__pycache__
 backend/healthapp/db.sqlite3
