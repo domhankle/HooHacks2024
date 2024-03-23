@@ -1,7 +1,8 @@
 venv
 backend/healthapp/healthapp/__pycache__
-backend/healthapp/user/__pycache__
-backend/healthapp/user/migrations/__pycache__
+backend/healthapp/service/__pycache__
+backend/healthapp/service/migrations/__pycache__
+backend/healthapp/service/users/__pycache__
 backend/healthapp/db.sqlite3
 frontend/node_modules
 frontend/.angular
