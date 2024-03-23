@@ -1,0 +1,10 @@
+venv
+backend/healthapp/health-app/__pycache__
+backend/healthapp/User/__pycache__
+backend/healthapp/User/migrations/__pycache__
+backend/healthapp/db.sqlite3
+frontend/node_modules
+frontend/.angular
+frontend/.editorconfig
+frontend/.vscode
+
