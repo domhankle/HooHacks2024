@@ -16,4 +16,4 @@ if [ ! -f "$json_file_path" ]; then
 fi
 
 # Use curl to send a POST request with the JSON content
-curl -X POST -H "Content-Type: application/json" -d @"$json_file_path" http://localhost:8000/service/createPatient | json
+curl -X POST -H "Content-Type: application/json" -d @"$json_file_path" http://localhost:8000/service/createPatient | jq

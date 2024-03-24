@@ -3,6 +3,7 @@ from django.views.decorators.csrf import csrf_exempt
 from ..models import User, Doctor, Patient, Appointment, Vitals, Prescription, Immunization
 from django.contrib.auth import authenticate, login
 import json
+from django.core import serializers
 
 def is_patient(user):
     return hasattr(user, 'patient')
@@ -21,62 +22,62 @@ def get_doctor(request):
         if doctor.password != password:
             raise ValueError
 
-        if doctor.patients.exists():
-            patient_out = []
+        patient_out = []
 
-            for patient in doctor.patients.all():
-                pat_appts = []
-                for appt in patient.appointments.all():
-                    appt_json = {
-                        'date': appt.date,
-                        'doctor': appt.doctor,
-                        'complete': appt.complete,
-                        'vitals':
-                        {
-                            'weight': appt.vitals.weight,
-                            'height': appt.vitals.height
-                        },
-                        'notes': appt.notes,
-                        'reasonForVisit': appt.reason_for_visit
-                    }
-
-                    pat_appts.append(appt_json)
-
-                pat_prescriptions = []
-                for pres in patient.prescriptions.all():
-                    pres_json = {
-                        'name': pres.name,
-                        'start': pres.start,
-                        'end': pres.end,
-                        'refill': pres.refill
-                    }
-
-                    pat_prescriptions.append(pres_json)
-
-                pat_imm = []
-                for imm in patient.immunizations.all():
-                    imm_json = {
-                        "name": imm.name,
-                        "upToDate": imm.up_to_date,
-                        "expires": imm.expires
-                    }
-
-                    pat_imm.append(imm_json)
-
-                pat_json = {
-                    'name': patient.name,
-                    'email': patient.email,
-                    'phoneNumber': patient.phone,
-                    'address': patient.address,
-                    'appointments': pat_appts,
-                    'prescriptions': pat_prescriptions,
-                    'immunizations': pat_imm
+        for patient in doctor.patients.all():
+            pat_appts = []
+            for appt in patient.appointments.all():
+                appt_json = {
+                    'date': appt.date,
+                    'doctor': appt.doctor.name,
+                    'complete': appt.complete,
+                    'vitals':
+                    {
+                        'weight': appt.vitals.weight,
+                        'height': appt.vitals.height
+                    },
+                    'notes': appt.notes,
+                    'reasonForVisit': appt.reason_for_visit
                 }
 
-                patient_out.append(pat_json)
-                
+                pat_appts.append(appt_json)
 
-        doctor = {
+            pat_prescriptions = []
+            for pres in patient.prescriptions.all():
+                pres_json = {
+                    'name': pres.name,
+                    'start': pres.start,
+                    'end': pres.end,
+                    'refill': pres.refill
+                }
+
+                pat_prescriptions.append(pres_json)
+
+            pat_imm = []
+            for imm in patient.immunizations.all():
+                imm_json = {
+                    "name": imm.name,
+                    "upToDate": imm.up_to_date,
+                    "expires": imm.expires
+                }
+
+                pat_imm.append(imm_json)
+
+            pat_json = {
+                'name': patient.name,
+                'email': patient.email,
+                'phoneNumber': patient.phone,
+                'address': patient.address,
+                'appointments': pat_appts,
+                'prescriptions': pat_prescriptions,
+                'immunizations': pat_imm
+            }
+
+            patient_out.append(pat_json)
+        
+        print(patient_out)
+
+        doctor_data = {
             'id': doctor.id,
             'username': doctor.username,
             'password': doctor.password,
@@ -85,7 +86,7 @@ def get_doctor(request):
 
 
         return JsonResponse({
-            'doctor':doctor
+            'doctor':doctor_data
         })
     except User.DoesNotExist:
         return JsonResponse({'error': 'User does not exist'}, status=404)
