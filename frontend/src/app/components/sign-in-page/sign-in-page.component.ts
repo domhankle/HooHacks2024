@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { Material } from '../../utility/modules';
+import { LoginService } from '../../services/login.service';
+import { SingletonService } from '../../services/singleton.service';
 
 @Component({
   selector: 'sign-in-page',
@@ -12,9 +14,21 @@ export class SignInPageComponent {
   public username = '';
   public password = '';
 
+  constructor(@Inject(LoginService) private _loginService: LoginService,
+    @Inject(SingletonService) private _singletonService: SingletonService) {
+
+  }
+
 
   public signIn(): void {
-    console.log("Username: ", this.username);
-    console.log("Password: ", this.password);
+    this._loginService.getDoctorUser(this.username, this.password).subscribe(
+      response => {
+        const doctor = { id: response.doctor.id, username: response.doctor.username, password: response.doctor.password, patients: response.doctor.patients };
+        this._singletonService.currentUser.next(doctor);
+        console.log("Currently Signed in User: ", this._singletonService.currentUser.value);
+      },
+      error => {
+        console.log(error);
+      });
   }
 }

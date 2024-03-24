@@ -1,12 +1,17 @@
-export enum Role{
-    PATIENT = 'PATIENT',
-    DOCTOR = 'DOCTOR',
-    ADMIN = 'ADMIN'
+
+export interface Patient{
+    id: number,
+    username: string,
+    password: string,
+    email: string,
+    phoneNumber: string,
+    doctors: Doctor[],
 }
 
-export interface User{
+export interface Doctor{
     id: number,
-    role: string,
     username: string,
-    password: string
+    password: string,
+    patients: Patient[]
 }
+
