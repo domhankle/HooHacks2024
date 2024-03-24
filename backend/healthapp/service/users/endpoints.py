@@ -25,10 +25,10 @@ def get_doctor(request):
             patient_list = list(user.patients.all())
             patient_out = []
 
-            # for patient in patient_list:
-            #     patient_out.append({
+            for patient in patient_list:
+                patient_out.append({
 
-            #     })
+                })
 
             doctor = {
                 'username': user.username,
@@ -40,10 +40,26 @@ def get_doctor(request):
             return JsonResponse({
                 'doctor':doctor
             })
-    except Exception:
-        return JsonResponse({'error': 'Login failed'}, status=404)
+    except User.DoesNotExist:
+        return JsonResponse({'error': 'User does not exist'}, status=404)
     except ValueError:
         return JsonResponse({'error': 'Incorrect Password'}, status=401)
 
+@csrf_exempt
+def create_doctor(request):
+    data = json.loads(request.body)
+    username = data.get('username')
+    password = data.get('password')
+    name = data.get('name')
+
+    doctor = Doctor.objects.create(username=username, password=password, name=name)
+
+    doctor.save()
+
+    return JsonResponse({
+        'name': name,
+        'username': username,
+        'password': password
+    })
 
         
