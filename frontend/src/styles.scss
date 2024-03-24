@@ -109,6 +109,7 @@ html {
 
 
 
+
 .normal-text {
     @include roboto-basics;
     font-size: 1.1rem;
@@ -143,6 +144,13 @@ body {
     color: map-get($neutral-palette, surface);
     font-style: italic;
     font-weight: 300;
+}
+
+.subtitle {
+    color: map-get($neutral-palette, dark-gray-text);
+    font-weight: 400;
+    font-size: x-large;
+    font-style: italic;
 }
 
 .dense-5 {
