@@ -18,7 +18,6 @@ def get_doctor(request):
 
     try:
         doctor = Doctor.objects.get(username=username)
-        
         if doctor.password != password:
             raise ValueError
 
@@ -74,8 +73,6 @@ def get_doctor(request):
             }
 
             patient_out.append(pat_json)
-        
-        print(patient_out)
 
         doctor_data = {
             'id': doctor.id,
@@ -114,11 +111,8 @@ def create_doctor(request):
 @csrf_exempt
 def create_patient(request):
     data = json.loads(request.body)
-    
     patient = Patient.objects.create(
         name = data.get('name'),
-        username = data.get('username'),
-        password = data.get('password'),
         email = data.get('email'),
         phone = data.get('phone'),
         address = data.get('address')

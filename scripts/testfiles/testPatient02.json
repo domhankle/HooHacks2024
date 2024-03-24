@@ -1,12 +1,13 @@
 {
+    "doc_id": 1,
     "name": "Lila Norris",
     "email": "lilanorris@example.com",
-    "phoneNumber": "555-482-5892",
+    "phone": "555-482-5892",
     "address": "123 Oak St, Anytown, CA 90210", 
     "appointments": [
       {
         "date": 1679414400,
-        "doctor": "Dr. Emily Patel",
+        "doctor_id": 1,
         "complete": true,
         "vitals": {
           "weight": 135,

@@ -1,7 +1,8 @@
 {
+    "doc_id":1,
     "name": "Benjamin Kim",
     "email": "benjaminkim@example.com",
-    "phoneNumber": "555-369-2580",
+    "phone": "555-369-2580",
     "address": "741 Oak Rd, Somewhere, NM 87104",
     "appointments": [],
     "prescriptions": [

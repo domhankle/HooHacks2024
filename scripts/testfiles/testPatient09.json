@@ -1,12 +1,13 @@
 {
+    "doc_id": 1,
     "name": "Evelyn Davis",
     "email": "evelyndavis@example.com",
-    "phoneNumber": "555-147-2589",
+    "phone": "555-147-2589",
     "address": "852 Birch Blvd, Everywhere, CO 80014",
     "appointments": [
       {
         "date": 1677715200,
-        "doctor": "Dr. Henry Nguyen",
+        "doctor_id": 1,
         "complete": true,
         "vitals": {
           "weight": 160,

@@ -1,14 +1,15 @@
 {
+  "doc_id":1,
   "name": "Henry Robinson",
   "email": "henryrobinson@example.com",
-  "phoneNumber": "555-369-2580",
+  "phone": "555-369-2580",
   "address": "741 Maple Ave, Somewhere, NY 10001",
   "appointments": [
     {
       "date": 1680451200,
-      "doctor": "Dr. Sophia Nguyen",
+      "doctor_id": 1,
       "complete": false,
-      "vitals": {},
+      "vitals": {"weight":300, "height":60},
       "notes": "",
       "reasonForVisit": "Sore throat"
     }

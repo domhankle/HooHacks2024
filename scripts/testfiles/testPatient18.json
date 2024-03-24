@@ -1,14 +1,15 @@
 {
+  "doc_id":1,
   "name": "Benjamin Nguyen",
   "email": "benjaminnguyen@example.com",
-  "phoneNumber": "555-159-7532",
+  "phone": "555-159-7532",
   "address": "741 Birch Blvd, Somewhere, TX 77001",
   "appointments": [
     {
       "date": 1682035200,
-      "doctor": "Dr. Olivia Torres",
+      "doctor_id": 1,
       "complete": false,
-      "vitals": {},
+      "vitals": {"weight":120, "height":45},
       "notes": "",
       "reasonForVisit": "Headaches"
     }

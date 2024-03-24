@@ -1,7 +1,8 @@
 {
+  "doc_id":1,
   "name": "Noah Kim",
   "email": "noahkim@example.com",
-  "phoneNumber": "555-123-4567",
+  "phone": "555-123-4567",
   "address": "789 Oak St, Nowhere, IA 50001",
   "appointments": [],
   "prescriptions": [

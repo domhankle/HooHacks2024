@@ -1,19 +1,20 @@
 {
+    "doc_id": 1,
     "name": "Ava Robinson",
     "email": "avarobinson@example.com",
-    "phoneNumber": "555-135-7924",
+    "phone": "555-135-7924",
     "address": "654 Cedar Ct, Somewhere, FL 32004",
     "appointments": [
       {
         "date": 1679241600,
-        "doctor": "Dr. Noah Patel",
+        "doctor_id": 1,
         "complete": true,
         "vitals": {
           "weight": 110,
           "height": 58
         },
         "notes": "Routine well child visit, growth on track.",
-        "reasonForVisit": "Annual checkup"  
+        "reasonForVisit": "Annual checkup"
       },
       {
         "date": 1664582400,

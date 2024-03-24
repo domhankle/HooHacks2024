@@ -1,7 +1,8 @@
 {
+    "doc_id":1,
     "name": "Scarlett Garcia",
     "email": "scarlettgarcia@example.com",
-    "phoneNumber": "555-159-7532",
+    "phone": "555-159-7532",
     "address": "741 Cedar Ct, Nowhere, AZ 85001",
     "appointments": [],
     "prescriptions": [

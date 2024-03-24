@@ -1,12 +1,14 @@
 {
+    "doc_id":1,
     "name": "Ethan Reeves",
     "email": "ethanreeves@example.com", 
-    "phoneNumber": "555-912-4758",
+    "phone": "555-912-4758",
     "address": "456 Elm Rd, Somewhere, TX 77204",
     "appointments": [
       {
+
         "date": 1681948800,
-        "doctor": "Dr. Olivia Chen",
+        "doctor_id": 1,
         "complete": false,
         "vitals": {},
         "notes": "",

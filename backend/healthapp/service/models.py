@@ -9,7 +9,7 @@ class User(models.Model):
 class Patient(User):
     name = models.CharField(max_length=100, blank=True)
     email = models.CharField(max_length=100, blank=True)
-    phone = models.CharField(max_length=100, blank=True)
+    phone = models.CharField(max_length=100, blank=True, null=True, default=None)
     doctors = models.ManyToManyField('Doctor', blank=True)
     address = models.CharField(max_length=100, blank=True)
     appointments = models.ManyToManyField('Appointment', blank=True)
@@ -22,11 +22,11 @@ class Appointment(models.Model):
     complete = models.BooleanField()
     vitals = models.OneToOneField('Vitals', on_delete=models.CASCADE, blank=True, null=True)
     notes = models.CharField(max_length=1000, blank=True)
-    reason_for_visit = models.CharField(max_length=100, blank=True)
+    reason_for_visit = models.CharField(max_length=100, blank=True, null=True, default=None)
 
 class Vitals(models.Model):
-    weight = models.CharField(max_length=100, blank=True)
-    height = models.CharField(max_length=100, blank=True)
+    weight = models.CharField(max_length=100, blank=True, null=True)
+    height = models.CharField(max_length=100, blank=True, null=True)
 
 class Prescription(models.Model):
     name = models.CharField(max_length=100)

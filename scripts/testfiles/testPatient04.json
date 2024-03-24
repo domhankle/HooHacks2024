@@ -1,11 +1,13 @@
 {
+    "doc_id":1,
     "name": "Sophia Nguyen",
     "email": "sophianguyen@example.com",
-    "phoneNumber": "555-314-1592", 
+    "phone": "555-314-1592", 
     "address": "789 Birch Blvd, Nowhere, ND 58102",
     "appointments": [],
     "prescriptions": [
       {
+        "doctor_id":1,
         "name": "Albuterol",
         "start": 1641081600,
         "end": 1798780800,

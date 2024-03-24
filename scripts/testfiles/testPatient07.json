@@ -1,14 +1,17 @@
 {
+    "doc_id":1,
     "name": "Mia Singh",
     "email": "miasingh@example.com",
-    "phoneNumber": "555-246-8101",
+    "phone": "555-246-8101",
     "address": "987 Maple Ave, Nowhere, WA 98004",
     "appointments": [
       {
         "date": 1679846400,
-        "doctor": "Dr. Charlotte Lee",
+        "doctor_id": 1,
         "complete": false,
-        "vitals": {},
+        "vitals": {
+            "weight": 80,
+            "height": 30},
         "notes": "",
         "reasonForVisit": "Earache"
       }

@@ -1,7 +1,8 @@
 {
+  "doc_id":1,
   "name": "Charlotte Davis",
   "email": "charlottedavis@example.com",
-  "phoneNumber": "555-246-8101",
+  "phone": "555-246-8101",
   "address": "987 Cedar Ct, Nowhere, FL 32001",
   "appointments": [],
   "prescriptions": [

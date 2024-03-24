@@ -1,14 +1,15 @@
 {
+  "doc_id":1,
   "name": "Olivia Torres",
   "email": "oliviatorres@example.com",
-  "phoneNumber": "555-802-4679",
+  "phone": "555-802-4679",
   "address": "456 Maple Ave, Somewhere, OR 97035",
   "appointments": [
     {
       "date": 1680451200,
-      "doctor": "Dr. Ethan Patel",
+      "doctor_id": 1,
       "complete": false,
-      "vitals": {},
+      "vitals": {"weight": 130, "height": 72},
       "notes": "",
       "reasonForVisit": "Cough and congestion"
     },

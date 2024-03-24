@@ -1,14 +1,15 @@
 {
+  "doc_id":1,
   "name": "Emma Nguyen",
   "email": "emmanguyen@example.com",
-  "phoneNumber": "555-987-6543",
+  "phone": "555-987-6543",
   "address": "321 Birch Blvd, Everywhere, TX 77001",
   "appointments": [
     {
       "date": 1682640000,
-      "doctor": "Dr. Liam Singh",
+      "doctor_id": 1,
       "complete": false,
-      "vitals": {},
+      "vitals": {"weight":110, "height":30},
       "notes": "",
       "reasonForVisit": "Rash on arms"
     }

@@ -1,4 +1,5 @@
 {
+  "doc_id":1,
   "name": "Amelia Singh",
   "email": "ameliasingh@example.com",
   "phoneNumber": "555-753-9514",
@@ -6,7 +7,7 @@
   "appointments": [
     {
       "date": 1679241600,
-      "doctor": "Dr. Benjamin Kim",
+      "doctor_id": 1,
       "complete": true,
       "vitals": {
         "weight": 120,

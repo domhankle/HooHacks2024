@@ -1,12 +1,13 @@
 {
+  "doc_id":1,
   "name": "Liam Patel",
   "email": "liampatel@example.com",
-  "phoneNumber": "555-135-7924",
+  "phone": "555-135-7924",
   "address": "654 Pine Ln, Somewhere, CA 90001",
   "appointments": [
     {
       "date": 1679846400,
-      "doctor": "Dr. Ava Chen",
+      "doctor_id": 1,
       "complete": true,
       "vitals": {
         "weight": 180,
