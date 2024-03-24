@@ -1,0 +1,27 @@
+{
+    "name": "Sophia Nguyen",
+    "email": "sophianguyen@example.com",
+    "phoneNumber": "555-314-1592", 
+    "address": "789 Birch Blvd, Nowhere, ND 58102",
+    "appointments": [],
+    "prescriptions": [
+      {
+        "name": "Albuterol",
+        "start": 1641081600,
+        "end": 1798780800,
+        "refill": true
+      }
+    ],
+    "immunizations": [
+      {
+        "name": "MMR",
+        "up_to_date": true,
+        "expires": 1798780800
+      },
+      {
+        "name": "Varicella",
+        "up_to_date": true,
+        "expires": 1798780800
+      }
+    ]
+  }

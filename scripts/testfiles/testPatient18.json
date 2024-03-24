@@ -1,0 +1,34 @@
+{
+  "name": "Benjamin Nguyen",
+  "email": "benjaminnguyen@example.com",
+  "phoneNumber": "555-159-7532",
+  "address": "741 Birch Blvd, Somewhere, TX 77001",
+  "appointments": [
+    {
+      "date": 1682035200,
+      "doctor": "Dr. Olivia Torres",
+      "complete": false,
+      "vitals": {},
+      "notes": "",
+      "reasonForVisit": "Headaches"
+    }
+  ],
+  "prescriptions": [],
+  "immunizations": [
+    {
+      "name": "Tdap",
+      "up_to_date": true,
+      "expires": 1798780800
+    },
+    {
+      "name": "Meningococcal",
+      "up_to_date": true,
+      "expires": 1798780800
+    },
+    {
+      "name": "COVID-19",
+      "up_to_date": true,
+      "expires": 1767225600
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+    "name": "Evelyn Davis",
+    "email": "evelyndavis@example.com",
+    "phoneNumber": "555-147-2589",
+    "address": "852 Birch Blvd, Everywhere, CO 80014",
+    "appointments": [
+      {
+        "date": 1677715200,
+        "doctor": "Dr. Henry Nguyen",
+        "complete": true,
+        "vitals": {
+          "weight": 160,
+          "height": 65
+        },
+        "notes": "Routine GYN exam, pap smear collected.",
+        "reasonForVisit": "Annual well woman exam"
+      }
+    ],
+    "prescriptions": [],
+    "immunizations": [
+      {
+        "name": "HPV",
+        "up_to_date": true,
+        "expires": 1767225600
+      }
+    ]
+  },
+  {
+    "name": "Henry Patel",
+    "email": "henrypatel@example.com",
+    "phoneNumber": "555-753-9514",
+    "address": "963 Pine Ln, Somewhere, NY 10001",
+    "appointments": [
+      {
+        "date": 1679068800,
+        "doctor": "Dr. Scarlett Kim",
+        "complete": true,
+        "vitals": {
+          "weight": 190,
+          "height": 70
+        },
+        "notes": "Routine physical, patient reports no concerns.",
+        "reasonForVisit": "Annual checkup"
+      }
+    ],
+    "prescriptions": [
+      {
+        "name": "Lisinopril",
+        "start": 1672560000,
+        "end": 1688169600,
+        "refill": true
+      }
+    ],
+    "immunizations": [
+      {
+        "name": "Tdap",
+        "up_to_date": true,
+        "expires": 1767225600
+      },
+      {
+        "name": "Influenza",
+        "up_to_date": true,
+        "expires": 1696118400
+      }
+    ]
+  }

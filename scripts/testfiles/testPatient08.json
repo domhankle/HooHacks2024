@@ -1,0 +1,44 @@
+{
+    "name": "Benjamin Kim",
+    "email": "benjaminkim@example.com",
+    "phoneNumber": "555-369-2580",
+    "address": "741 Oak Rd, Somewhere, NM 87104",
+    "appointments": [],
+    "prescriptions": [
+      {
+        "name": "Lisinopril", 
+        "start": 1672560000,
+        "end": 1688169600,
+        "refill": true
+      },
+      {
+        "name": "Metformin",
+        "start": 1672560000,
+        "end": 1688169600,
+        "refill": true
+      },
+      {
+        "name": "Atorvastatin",
+        "start": 1672560000,
+        "end": 1688169600,
+        "refill": true
+      }
+    ],
+    "immunizations": [
+      {
+        "name": "Influenza",
+        "up_to_date": false,
+        "expires": 1664582400
+      },
+      {
+        "name": "Pneumococcal",
+        "up_to_date": true,
+        "expires": 1735689600
+      },
+      {
+        "name": "Shingles",
+        "up_to_date": true,
+        "expires": 1767225600
+      }
+    ]
+  }

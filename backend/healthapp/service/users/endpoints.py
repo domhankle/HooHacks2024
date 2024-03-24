@@ -1,6 +1,6 @@
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
-from ..models import User, Doctor, Patient
+from ..models import User, Doctor, Patient, Appointment, Vitals, Prescription, Immunization
 from django.contrib.auth import authenticate, login
 import json
 
@@ -10,239 +10,77 @@ def is_patient(user):
 def is_doctor(user):
     return hasattr(user, 'doctor')
 
-def fake_patients():
-    return [{
-        'name': 'Domenic Hankle',
-        'email': 'dhank003@gmail.com',
-        'phoneNumber': '757-394-6969',
-        'address': "4200 Huckleberry Trail, Virginia Beach, VA",
-        'appointments':
-        [{
-            'date': 3020302,
-            'doctor': 'Dr. T-Pain',
-            'complete': True,
-            'vitals':
-            {
-                'weight': 8000,
-                'height': 4
-            },
-            'notes': 'Bro took a shit on the hospital bed.',
-            'reason_for_visit': 'Excessive peeing'
-        },
-        {
-            'date': 289342,
-            'doctor': 'Dr. Penis',
-            'complete': False,
-            'vitals':{},
-            'notes': 'wtfff.',
-            'reason_for_visit': 'Drank Norfolk water.'
-        }],
-        'prescriptions': 
-        [{
-            'name': 'Comethazine',
-            'start': 0,
-            'end': 1000000,
-            'refill': True
-        },
-        {
-            'name': 'Soggy Crispers',
-            'start': 33,
-            'end': 489489,
-            'refill': False
-        }],
-        'immunizations': 
-        [{
-            "name": "Rabies",
-            "up_to_date": False,
-            "expires": 567
-        },
-        {
-            "name": "running out of ideas",
-            "up_to_date": True,
-            "expires": 78483789743
-        }]
-
-    },
-    {
-        'name': 'Anthony Vecchio',
-        'email': 'dapie125@gmail.com',
-        'phoneNumber': '757-339-7969',
-        'address': '4227 Hunt Club Circle, Fairfax, VA',
-        'appointments':
-        [{
-            'date': 3020302,
-            'doctor': 'Dr. T-Pain',
-            'complete': True,
-            'vitals':
-            {
-                'weight': 0,
-                'height': 59
-            },
-            'notes': 'fiended over black women.',
-            'reason_for_visit': 'homosexual tendencies'
-        },
-        {
-            'date': 289342,
-            'doctor': 'Dr. Penis',
-            'complete': False,
-            'vitals':{},
-            'notes': 'wtfff.',
-            'reason_for_visit': 'eat without youtube.'
-        }],
-        'prescriptions': 
-        [{
-            'name': 'PeanutButterPretzels',
-            'start': 0,
-            'end': 1000000,
-            'refill': True
-        },
-        {
-            'name': 'Black Pussy',
-            'start': 33,
-            'end': 489489,
-            'refill': False
-        }],
-        'immunizations': 
-        [{
-            "name": "idk",
-            "up_to_date": False,
-            "expires": 567
-        },
-        {
-            "name": "bruhhhhh",
-            "up_to_date": True,
-            "expires": 78483789743
-        }]
-    },
-    {
-        'name': 'Grady Insley',
-        'email': 'dagradster@gmail.com',
-        'phoneNumber': '757-696-9988',
-        'address': 'MIDQUOSON HELL NAW',
-        'appointments':
-        [{
-            'date': 3020302,
-            'doctor': 'Dr. Penja Mon',
-            'complete': True,
-            'vitals':
-            {
-                'weight': 200000,
-                'height': 200
-            },
-            'notes': 'Worked on dnd campaign all appt.',
-            'reason_for_visit': 'homosexual tendencies'
-        },
-        {
-            'date': 289342,
-            'doctor': 'Dr. Penis',
-            'complete': False,
-            'vitals':{},
-            'notes': 'wtfff.',
-            'reason_for_visit': 'eat without youtube.'
-        }],
-        'prescriptions': 
-        [{
-            'name': 'Lean',
-            'start': 0,
-            'end': 1000000,
-            'refill': True
-        },
-        {
-            'name': 'Toke',
-            'start': 33,
-            'end': 489489,
-            'refill': False
-        }],
-        'immunizations': 
-        [{
-            "name": "HIV/AIDS",
-            "up_to_date": False,
-            "expires": 567
-        },
-        {
-            "name": "Flu",
-            "up_to_date": True,
-            "expires": 78483789743
-        }]
-    },
-    {
-        'name': 'Ross Insley',
-        'email': 'ilovedestiny@gmail.com',
-        'phoneNumber': '757-idkmf',
-        'address': 'something Sandy Bay Dr, Virginia Beach, VA',
-        'appointments':
-        [{
-            'date': 3020302,
-            'doctor': 'Dr. Sukuna',
-            'complete': True,
-            'vitals':
-            {
-                'weight': 200000,
-                'height': 200
-            },
-            'notes': 'what do i even write here.',
-            'reason_for_visit': 'also homosexual tendencies'
-        },
-        {
-            'date': 289342,
-            'doctor': 'Dr. Penis',
-            'complete': False,
-            'vitals':{},
-            'notes': 'kms.',
-            'reason_for_visit': 'valorant player.'
-        }],
-        'prescriptions': 
-        [{
-            'name': 'vitaminwater',
-            'start': 0,
-            'end': 1000000,
-            'refill': True
-        },
-        {
-            'name': 'everclear',
-            'start': 33,
-            'end': 489489,
-            'refill': False
-        }],
-        'immunizations': 
-        [{
-            "name": "random shit",
-            "up_to_date": False,
-            "expires": 567
-        },
-        {
-            "name": "Flu",
-            "up_to_date": True,
-            "expires": 78483789743
-        }]
-    }]
-
-
 @csrf_exempt
 def get_doctor(request):
     username = request.GET.get('username')
     password = request.GET.get('password')
 
     try:
-        user = Doctor.objects.get(username=username)
+        doctor = Doctor.objects.get(username=username)
         
-        if user.password != password:
+        if doctor.password != password:
             raise ValueError
 
-        if user.patients.exists():
-            patient_list = list(user.patients.all())
+        if doctor.patients.exists():
             patient_out = []
 
-            for patient in patient_list:
-                patient_out.append({
+            for patient in doctor.patients.all():
+                pat_appts = []
+                for appt in patient.appointments.all():
+                    appt_json = {
+                        'date': appt.date,
+                        'doctor': appt.doctor,
+                        'complete': appt.complete,
+                        'vitals':
+                        {
+                            'weight': appt.vitals.weight,
+                            'height': appt.vitals.height
+                        },
+                        'notes': appt.notes,
+                        'reasonForVisit': appt.reason_for_visit
+                    }
 
-                })
+                    pat_appts.append(appt_json)
+
+                pat_prescriptions = []
+                for pres in patient.prescriptions.all():
+                    pres_json = {
+                        'name': pres.name,
+                        'start': pres.start,
+                        'end': pres.end,
+                        'refill': pres.refill
+                    }
+
+                    pat_prescriptions.append(pres_json)
+
+                pat_imm = []
+                for imm in patient.immunizations.all():
+                    imm_json = {
+                        "name": imm.name,
+                        "upToDate": imm.up_to_date,
+                        "expires": imm.expires
+                    }
+
+                    pat_imm.append(imm_json)
+
+                pat_json = {
+                    'name': patient.name,
+                    'email': patient.email,
+                    'phoneNumber': patient.phone,
+                    'address': patient.address,
+                    'appointments': pat_appts,
+                    'prescriptions': pat_prescriptions,
+                    'immunizations': pat_imm
+                }
+
+                patient_out.append(pat_json)
+                
 
         doctor = {
-            'id': user.id,
-            'username': user.username,
-            'password': user.password,
-            'patients': fake_patients()
+            'id': doctor.id,
+            'username': doctor.username,
+            'password': doctor.password,
+            'patients': patient_out
         }
 
 
@@ -266,9 +104,115 @@ def create_doctor(request):
     doctor.save()
 
     return JsonResponse({
+        'id': doctor.id,
         'name': name,
         'username': username,
         'password': password
     })
+
+@csrf_exempt
+def create_patient(request):
+    data = json.loads(request.body)
+    
+    patient = Patient.objects.create(
+        name = data.get('name'),
+        username = data.get('username'),
+        password = data.get('password'),
+        email = data.get('email'),
+        phone = data.get('phone'),
+        address = data.get('address')
+    )
+
+    doctors = data.get('doctors')
+    if doctors:
+        for doc_id in doctors:
+            try:
+                doctor = Doctor.objects.get(id=doc_id)
+                patient.doctors.add(doctor)
+            except Exception:
+                continue
+
+    appointments = data.get('appointments')
+    if appointments:
+        for appt_json in appointments:
+            appt = Appointment.objects.create(
+                date=appt_json.get('date'),
+                complete=appt_json.get('complete'),
+                reason_for_visit=appt_json.get('reason'),
+                notes=appt_json.get('notes')
+            )
+            appt.doctor.add(Doctor.objects.get(id=appt_json.get('doctor_id')))
+
+            vitals_json = appt_json.get('vitals')
+            if vitals_json:
+                vitals = Vitals.objects.create(
+                    weight=vitals_json.get('weight'),
+                    height=vitals_json.get('height')
+                )
+                vitals.save()
+                appt.vitals = vitals  # Assign the created Vitals object to the appointment
+
+            appt.save()
+            patient.appointments.add(appt)
+    
+    prescriptions = data.get('prescriptions')
+    if prescriptions:
+        for pres_json in prescriptions:
+            pres = Prescription.objects.create(
+                name = pres_json.get('name'),
+                start = pres_json.get('start'),
+                end = pres_json.get('end'),
+                refill = pres_json.get('refill')
+            )
+
+            pres.save()
+
+            patient.prescriptions.add(pres)
+    
+    immunizations = data.get('immunizations')
+    if immunizations:
+        for imm_json in immunizations:
+            imm = Immunization.objects.create(
+                name = imm_json.get('name'),
+                up_to_date = imm_json.get('up_to_date'),
+                expires = imm_json.get('expires')
+            )
+
+            imm.save()
+
+            patient.immunizations.add(imm)
+
+    patient.save()
+
+    doc = Doctor.objects.get(id=data.get('doc_id'))
+    doc.patients.add(patient)
+    doc.save()
+
+    outdoc = []
+    for dr in patient.doctors.all():
+        outdoc.append(dr.name)
+
+    return JsonResponse({
+        'doctorToAdd': doc.name,
+        'name': patient.name,
+        'username': patient.username,
+        'password': patient.password,
+        'email': patient.email,
+        'phone': patient.phone,
+        'address': patient.address,
+        'doctors': outdoc,
+        'appointments': appointments,
+        'prescriptions': prescriptions,
+        'immunizations': immunizations
+    })
+
+def fake_patients():
+    return []
+
+    
+
+                
+
+
 
         

@@ -1,0 +1,51 @@
+{
+    "name": "Anthony Vecchio",
+    "email": "dapie125@gmail.com",
+    "phoneNumber": "757-339-7969",
+    "address": "4227 Hunt Club Circle, Fairfax, VA",
+    "appointments":
+    [{
+        "date": 3020302,
+        "doctor": "Dr. T-Pain",
+        "complete": true,
+        "vitals":
+        {
+            "weight": 0,
+            "height": 59
+        },
+        "notes": "fiended over black women.",
+        "reasonForVisit": "homosexual tendencies"
+    },
+    {
+        "date": 289342,
+        "doctor": "Dr. Penis",
+        "complete": false,
+        "vitals":{},
+        "notes": "wtfff.",
+        "reasonForVisit": "eat without youtube."
+    }],
+    "prescriptions": 
+    [{
+        "name": "PeanutButterPretzels",
+        "start": 0,
+        "end": 1000000,
+        "refill": true
+    },
+    {
+        "name": "Black Pussy",
+        "start": 33,
+        "end": 489489,
+        "refill": false
+    }],
+    "immunizations": 
+    [{
+        "name": "idk",
+        "up_to_date": false,
+        "expires": 567
+    },
+    {
+        "name": "bruhhhhh",
+        "up_to_date": true,
+        "expires": 78483789743
+    }]
+}

@@ -1,0 +1,42 @@
+{
+  "name": "Olivia Torres",
+  "email": "oliviatorres@example.com",
+  "phoneNumber": "555-802-4679",
+  "address": "456 Maple Ave, Somewhere, OR 97035",
+  "appointments": [
+    {
+      "date": 1680451200,
+      "doctor": "Dr. Ethan Patel",
+      "complete": false,
+      "vitals": {},
+      "notes": "",
+      "reasonForVisit": "Cough and congestion"
+    },
+    {
+      "date": 1677110400,
+      "doctor": "Dr. Ethan Patel",
+      "complete": true,
+      "vitals": {
+        "weight": 130,
+        "height": 63
+      },
+      "notes": "Routine physical, no concerns.",
+      "reasonForVisit": "Annual checkup"
+    }
+  ],
+  "prescriptions": [
+    {
+      "name": "Amoxicillin",
+      "start": 1680451200,
+      "end": 1681056000,
+      "refill": false
+    }
+  ],
+  "immunizations": [
+    {
+      "name": "Influenza",
+      "up_to_date": true,
+      "expires": 1696118400
+    }
+  ]
+}

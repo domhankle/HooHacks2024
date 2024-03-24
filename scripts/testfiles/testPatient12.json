@@ -1,0 +1,38 @@
+{
+  "name": "Noah Kim",
+  "email": "noahkim@example.com",
+  "phoneNumber": "555-123-4567",
+  "address": "789 Oak St, Nowhere, IA 50001",
+  "appointments": [],
+  "prescriptions": [
+    {
+      "name": "Albuterol",
+      "start": 1672560000,
+      "end": 1688169600,
+      "refill": true
+    },
+    {
+      "name": "Fluticasone",
+      "start": 1672560000,
+      "end": 1688169600,
+      "refill": true
+    }
+  ],
+  "immunizations": [
+    {
+      "name": "MMR",
+      "up_to_date": true,
+      "expires": 1798780800
+    },
+    {
+      "name": "Varicella",
+      "up_to_date": true,
+      "expires": 1798780800
+    },
+    {
+      "name": "Hepatitis A",
+      "up_to_date": true,
+      "expires": 1798780800
+    }
+  ]
+}

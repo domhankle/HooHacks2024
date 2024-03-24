@@ -1,0 +1,40 @@
+{
+    "name": "Ethan Reeves",
+    "email": "ethanreeves@example.com", 
+    "phoneNumber": "555-912-4758",
+    "address": "456 Elm Rd, Somewhere, TX 77204",
+    "appointments": [
+      {
+        "date": 1681948800,
+        "doctor": "Dr. Olivia Chen",
+        "complete": false,
+        "vitals": {},
+        "notes": "",
+        "reasonForVisit": "Sore throat"
+      },
+      {
+        "date": 1679500800,
+        "doctor": "Dr. Olivia Chen", 
+        "complete": true,
+        "vitals": {
+          "weight": 180,
+          "height": 71
+        },
+        "notes": "Strep test negative, likely viral infection.",
+        "reasonForVisit": "Sore throat follow-up"
+      }
+    ],
+    "prescriptions": [],
+    "immunizations": [
+      {
+        "name": "Tdap",
+        "up_to_date": true,
+        "expires": 1838054400
+      },
+      {
+        "name": "HPV",
+        "up_to_date": false,
+        "expires": 0
+      }
+    ]
+  }

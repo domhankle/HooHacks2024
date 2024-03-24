@@ -1,0 +1,41 @@
+{
+  "name": "Emma Nguyen",
+  "email": "emmanguyen@example.com",
+  "phoneNumber": "555-987-6543",
+  "address": "321 Birch Blvd, Everywhere, TX 77001",
+  "appointments": [
+    {
+      "date": 1682640000,
+      "doctor": "Dr. Liam Singh",
+      "complete": false,
+      "vitals": {},
+      "notes": "",
+      "reasonForVisit": "Rash on arms"
+    }
+  ],
+  "prescriptions": [
+    {
+      "name": "Hydrocortisone cream",
+      "start": 1682640000,
+      "end": 1685318400,
+      "refill": false
+    }
+  ],
+  "immunizations": [
+    {
+      "name": "Tdap",
+      "up_to_date": true,
+      "expires": 1798780800
+    },
+    {
+      "name": "Meningococcal",
+      "up_to_date": true,
+      "expires": 1798780800
+    },
+    {
+      "name": "HPV",
+      "up_to_date": false,
+      "expires": 0
+    }
+  ]
+}

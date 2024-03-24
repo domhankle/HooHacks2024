@@ -1,0 +1,28 @@
+{
+    "name": "Scarlett Garcia",
+    "email": "scarlettgarcia@example.com",
+    "phoneNumber": "555-159-7532",
+    "address": "741 Cedar Ct, Nowhere, AZ 85001",
+    "appointments": [],
+    "prescriptions": [
+      {
+        "name": "Sertraline",
+        "start": 1672560000,
+        "end": 1688169600,
+        "refill": true
+      },
+      {
+        "name": "Trazodone",
+        "start": 1672560000,
+        "end": 1688169600,
+        "refill": true  
+      }
+    ],
+    "immunizations": [
+      {
+        "name": "COVID-19",
+        "up_to_date": true,
+        "expires": 1767225600
+      }
+    ]
+  }

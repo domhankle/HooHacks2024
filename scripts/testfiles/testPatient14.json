@@ -1,0 +1,50 @@
+{
+  "name": "Liam Patel",
+  "email": "liampatel@example.com",
+  "phoneNumber": "555-135-7924",
+  "address": "654 Pine Ln, Somewhere, CA 90001",
+  "appointments": [
+    {
+      "date": 1679846400,
+      "doctor": "Dr. Ava Chen",
+      "complete": true,
+      "vitals": {
+        "weight": 180,
+        "height": 70
+      },
+      "notes": "Routine physical, patient reports no concerns.",
+      "reasonForVisit": "Annual checkup"
+    }
+  ],
+  "prescriptions": [
+    {
+      "name": "Lisinopril",
+      "start": 1672560000,
+      "end": 1688169600,
+      "refill": true
+    },
+    {
+      "name": "Atorvastatin",
+      "start": 1672560000,
+      "end": 1688169600,
+      "refill": true
+    }
+  ],
+  "immunizations": [
+    {
+      "name": "Influenza",
+      "up_to_date": true,
+      "expires": 1696118400
+    },
+    {
+      "name": "Pneumococcal",
+      "up_to_date": true,
+      "expires": 1767225600
+    },
+    {
+      "name": "Shingles",
+      "up_to_date": false,
+      "expires": 0
+    }
+  ]
+}

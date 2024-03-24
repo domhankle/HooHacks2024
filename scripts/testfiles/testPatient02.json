@@ -1,0 +1,40 @@
+{
+    "name": "Lila Norris",
+    "email": "lilanorris@example.com",
+    "phoneNumber": "555-482-5892",
+    "address": "123 Oak St, Anytown, CA 90210", 
+    "appointments": [
+      {
+        "date": 1679414400,
+        "doctor": "Dr. Emily Patel",
+        "complete": true,
+        "vitals": {
+          "weight": 135,
+          "height": 64
+        },
+        "notes": "Annual physical, patient in good health.",
+        "reasonForVisit": "Annual checkup"
+      }
+    ],
+    "prescriptions": [
+      {
+        "name": "Lisinopril",
+        "start": 1672560000, 
+        "end": 1688169600,
+        "refill": true
+      },
+      {
+        "name": "Atorvastatin",
+        "start": 1672560000,
+        "end": 1688169600, 
+        "refill": true
+      }
+    ],
+    "immunizations": [
+      {
+        "name": "Influenza",
+        "up_to_date": true,
+        "expires": 1696118400
+      }
+    ]
+  }

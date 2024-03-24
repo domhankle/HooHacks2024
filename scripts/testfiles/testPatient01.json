@@ -1,0 +1,39 @@
+{
+    "doc_id": 1,
+    "name": "John Doe",
+    "username": "johnnieboy173",
+    "password": "passwordlol",
+    "email": "johndoe@example.com",
+    "phone": "1234567890",
+    "address": "1234 Elm Street",
+    "doctors": [1, 2],
+    "appointments": [
+      {
+        "date": 3789493,
+        "doctor_id": 1,
+        "complete": false,
+        "reason": "Routine Checkup",
+        "notes": "Patient is healthy.",
+        "vitals": {
+          "weight": "70",
+          "height": "175"
+        }
+      }
+    ],
+    "prescriptions": [
+      {
+        "name": "Medication A",
+        "start": 28378267,
+        "end": 787327372023,
+        "refill": true
+      }
+    ],
+    "immunizations": [
+      {
+        "name": "Immunization A",
+        "up_to_date": true,
+        "expires": 1234325
+      }
+    ]
+  }
+  

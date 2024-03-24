@@ -1,0 +1,39 @@
+{
+  "name": "Amelia Singh",
+  "email": "ameliasingh@example.com",
+  "phoneNumber": "555-753-9514",
+  "address": "963 Oak Rd, Everywhere, CA 90210",
+  "appointments": [
+    {
+      "date": 1679241600,
+      "doctor": "Dr. Benjamin Kim",
+      "complete": true,
+      "vitals": {
+        "weight": 120,
+        "height": 62
+      },
+      "notes": "Routine GYN exam, pap smear collected.",
+      "reasonForVisit": "Annual well woman exam"
+    }
+  ],
+  "prescriptions": [
+    {
+      "name": "Sprintec",
+      "start": 1672560000,
+      "end": 1688169600,
+      "refill": true
+    }
+  ],
+  "immunizations": [
+    {
+      "name": "HPV",
+      "up_to_date": true,
+      "expires": 1767225600
+    },
+    {
+      "name": "Influenza",
+      "up_to_date": true,
+      "expires": 1696118400
+    }
+  ]
+}

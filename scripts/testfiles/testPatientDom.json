@@ -1,0 +1,52 @@
+{
+    "name": "Domenic Hankle",
+    "email": "dhank003@gmail.com",
+    "phoneNumber": "757-394-6969",
+    "address": "4200 Huckleberry Trail, Virginia Beach, VA",
+    "appointments":
+    [{
+        "date": 3020302,
+        "doctor": "Dr. T-Pain",
+        "complete": true,
+        "vitals":
+        {
+            "weight": 8000,
+            "height": 4
+        },
+        "notes": "Bro took a shit on the hospital bed.",
+        "reasonForVisit": "Excessive peeing"
+    },
+    {
+        "date": 289342,
+        "doctor": "Dr. Penis",
+        "complete": false,
+        "vitals":{},
+        "notes": "wtfff.",
+        "reasonForVisit": "Drank Norfolk water."
+    }],
+    "prescriptions": 
+    [{
+        "name": "Comethazine",
+        "start": 0,
+        "end": 1000000,
+        "refill": true
+    },
+    {
+        "name": "Soggy Crispers",
+        "start": 33,
+        "end": 489489,
+        "refill": false
+    }],
+    "immunizations": 
+    [{
+        "name": "Rabies",
+        "upToDate": false,
+        "expires": 567
+    },
+    {
+        "name": "running out of ideas",
+        "upToDate": true,
+        "expires": 78483789743
+    }]
+
+}

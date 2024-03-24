@@ -1,0 +1,63 @@
+{
+    "name": "Ava Robinson",
+    "email": "avarobinson@example.com",
+    "phoneNumber": "555-135-7924",
+    "address": "654 Cedar Ct, Somewhere, FL 32004",
+    "appointments": [
+      {
+        "date": 1679241600,
+        "doctor": "Dr. Noah Patel",
+        "complete": true,
+        "vitals": {
+          "weight": 110,
+          "height": 58
+        },
+        "notes": "Routine well child visit, growth on track.",
+        "reasonForVisit": "Annual checkup"  
+      },
+      {
+        "date": 1664582400,
+        "doctor": "Dr. Noah Patel",
+        "complete": true,
+        "vitals": {
+          "weight": 108,
+          "height": 57
+        },
+        "notes": "Routine well child visit, growth on track.",
+        "reasonForVisit": "Annual checkup"
+      }
+    ],
+    "prescriptions": [],
+    "immunizations": [
+      {
+        "name": "DTaP",
+        "up_to_date": true,
+        "expires": 1679241600
+      },
+      {
+        "name": "Polio",
+        "up_to_date": true,
+        "expires": 1679241600
+      },
+      {
+        "name": "Hib", 
+        "up_to_date": true,
+        "expires": 1679241600
+      },
+      {
+        "name": "Pneumococcal",
+        "up_to_date": true,
+        "expires": 1679241600  
+      },
+      {
+        "name": "Rotavirus",
+        "up_to_date": true,
+        "expires": 1679241600
+      },
+      {
+        "name": "Hepatitis B",
+        "up_to_date": true,
+        "expires": 1679241600
+      }
+    ]
+  }

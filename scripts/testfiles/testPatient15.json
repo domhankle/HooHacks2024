@@ -1,0 +1,27 @@
+{
+  "name": "Charlotte Davis",
+  "email": "charlottedavis@example.com",
+  "phoneNumber": "555-246-8101",
+  "address": "987 Cedar Ct, Nowhere, FL 32001",
+  "appointments": [],
+  "prescriptions": [
+    {
+      "name": "Levothyroxine",
+      "start": 1672560000,
+      "end": 1688169600,
+      "refill": true
+    }
+  ],
+  "immunizations": [
+    {
+      "name": "Tdap",
+      "up_to_date": true,
+      "expires": 1767225600
+    },
+    {
+      "name": "Influenza",
+      "up_to_date": false,
+      "expires": 1664582400
+    }
+  ]
+}

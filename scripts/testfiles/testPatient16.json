@@ -1,0 +1,34 @@
+{
+  "name": "Henry Robinson",
+  "email": "henryrobinson@example.com",
+  "phoneNumber": "555-369-2580",
+  "address": "741 Maple Ave, Somewhere, NY 10001",
+  "appointments": [
+    {
+      "date": 1680451200,
+      "doctor": "Dr. Sophia Nguyen",
+      "complete": false,
+      "vitals": {},
+      "notes": "",
+      "reasonForVisit": "Sore throat"
+    }
+  ],
+  "prescriptions": [],
+  "immunizations": [
+    {
+      "name": "MMR",
+      "up_to_date": true,
+      "expires": 1798780800
+    },
+    {
+      "name": "Varicella",
+      "up_to_date": true,
+      "expires": 1798780800
+    },
+    {
+      "name": "Hepatitis A",
+      "up_to_date": true,
+      "expires": 1798780800
+    }
+  ]
+}

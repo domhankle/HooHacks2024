@@ -1,0 +1,31 @@
+{
+    "name": "Jackson Torres",
+    "email": "jacksontorres@example.com",
+    "phoneNumber": "555-987-6543",
+    "address": "321 Pine Ln, Everywhere, VT 05404",
+    "appointments": [
+      {
+        "date": 1682035200,
+        "doctor": "Dr. Liam Singh",
+        "complete": false,
+        "vitals": {},
+        "notes": "",
+        "reasonForVisit": "Sprained ankle"
+      }
+    ],
+    "prescriptions": [
+      {
+        "name": "Ibuprofen",
+        "start": 1682035200,
+        "end": 1682640000,
+        "refill": false
+      }
+    ],
+    "immunizations": [
+      {
+        "name": "COVID-19",
+        "up_to_date": true,
+        "expires": 1735689600
+      }
+    ]
+  }
