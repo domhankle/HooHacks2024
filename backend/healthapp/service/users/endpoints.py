@@ -14,7 +14,8 @@ def fake_patients():
     return [{
         'name': 'Domenic Hankle',
         'email': 'dhank003@gmail.com',
-        'phone_number': '757-394-6969',
+        'phoneNumber': '757-394-6969',
+        'address': "4200 Huckleberry Trail, Virginia Beach, VA",
         'appointments':
         [{
             'date': 3020302,
@@ -65,7 +66,8 @@ def fake_patients():
     {
         'name': 'Anthony Vecchio',
         'email': 'dapie125@gmail.com',
-        'phone_number': '757-339-7969',
+        'phoneNumber': '757-339-7969',
+        'address': '4227 Hunt Club Circle, Fairfax, VA',
         'appointments':
         [{
             'date': 3020302,
@@ -115,7 +117,8 @@ def fake_patients():
     {
         'name': 'Grady Insley',
         'email': 'dagradster@gmail.com',
-        'phone_number': '757-696-9988',
+        'phoneNumber': '757-696-9988',
+        'address': 'MIDQUOSON HELL NAW',
         'appointments':
         [{
             'date': 3020302,
@@ -165,7 +168,8 @@ def fake_patients():
     {
         'name': 'Ross Insley',
         'email': 'ilovedestiny@gmail.com',
-        'phone_number': '757-idkmf',
+        'phoneNumber': '757-idkmf',
+        'address': 'something Sandy Bay Dr, Virginia Beach, VA',
         'appointments':
         [{
             'date': 3020302,
