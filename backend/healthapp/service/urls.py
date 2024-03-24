@@ -1,6 +1,6 @@
 from django.urls import path
-from . import views
+from .users import endpoints as UserEndpoints
 
 urlpatterns = [
-        path('doctor', views.UserEndpoints.get_doctor)
+        path('doctor', UserEndpoints.get_doctor)
 ]
