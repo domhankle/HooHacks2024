@@ -4,6 +4,8 @@
     </button>
 </div>
 
+@if(!viewingPatient)
+{
 <div class="header">
     <input #input class="input-style search-bar" placeholder="Search For Patient..." [(ngModel)]="searchBarValue"
         (ngModelChange)="onInputChange()">
@@ -33,7 +35,8 @@
         </ng-container>
 
         <tr mat-header-row *matHeaderRowDef="displayedColumns" class="table-header"></tr>
-        <tr mat-row *matRowDef="let row; columns: displayedColumns;" class="table-row"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;" class="table-row"
+            (click)="handlePatientClick(row)"></tr>
 
     </table>
 
@@ -41,3 +44,9 @@
         (page)="handlePaging($event)">
     </mat-paginator>
 </mat-card>
+}
+@else
+{
+<patient-chart class="patient-chart" [patientData]="patientShown">
+</patient-chart>
+}

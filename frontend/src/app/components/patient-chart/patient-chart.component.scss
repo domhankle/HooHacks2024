@@ -1,0 +1,41 @@
+@import '../../../styles.scss';
+@import '../../../palettes.scss';
+
+:host {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 70%;
+
+    .tabs-container {
+        width: 85%;
+        height: 100%;
+    }
+
+    .tab-group {
+        height: 100%;
+        overflow-y: auto;
+    }
+
+    ::ng-deep.mat-mdc-tab-body-wrapper {
+        height: 100% !important;
+    }
+
+    .appointments-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        padding: 20px;
+    }
+
+    .prescriptions-container,
+    .immunizations-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 10px;
+        padding: 20px;
+    }
+
+}

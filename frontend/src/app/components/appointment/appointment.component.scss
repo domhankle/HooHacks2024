@@ -1,0 +1,32 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: 100%;
+    background-color: lightgray;
+    border-radius: 12px;
+    padding: 20px;
+    gap: 10px;
+
+    .appointment-date {
+        font-size: x-large;
+        font-weight: 500;
+    }
+
+    .subtitle-font {
+        font-style: normal;
+    }
+
+    .small-text {
+        font-size: x-small;
+    }
+
+    .notes-info,
+    .vitals-info,
+    .reason-for-visit-info,
+    .dr-info {
+        display: flex;
+        flex-direction: column;
+    }
+
+}

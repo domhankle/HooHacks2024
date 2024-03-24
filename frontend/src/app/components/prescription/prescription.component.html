@@ -1,0 +1,13 @@
+<div class="prescription-container">
+    <span class="prescription-title">{{name}}</span>
+    <i class="fa fa-plus-square fa-2x" aria-hidden="true"> </i>
+    <div class="time-range-container">
+        <span class="start-date">{{start | date:'shortDate' }}</span>
+        <span class="dash">-</span>
+        <span class="end-date">{{end | date:'shortDate' }}</span>
+    </div>
+    @if(refill)
+    {
+    <span class="refill-indicator">Will Need Refilled</span>
+    }
+</div>

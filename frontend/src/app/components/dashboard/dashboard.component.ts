@@ -5,11 +5,12 @@ import { SingletonService } from '../../services/singleton.service';
 import { paginateData } from '../../utility/functions';
 import { PageEvent } from '@angular/material/paginator';
 import { Router } from '@angular/router';
+import { PatientChartComponent } from '../patient-chart/patient-chart.component';
 
 @Component({
   selector: 'dashboard',
   standalone: true,
-  imports: [...Material],
+  imports: [...Material, PatientChartComponent],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss'
 })
@@ -67,5 +68,11 @@ export class DashboardComponent {
   public signOut(): void {
     this._singletonService.currentDoctor.next({ id: -1, username: '', password: '', patients: [] });
     this._router.navigate(['sign-in']);
+  }
+
+  public handlePatientClick(patient: Patient): void {
+    console.log(patient);
+    this.patientShown = patient;
+    this.viewingPatient = true;
   }
 }

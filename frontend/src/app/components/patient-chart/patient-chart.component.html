@@ -1,0 +1,32 @@
+<mat-card div class="tabs-container">
+    <mat-tab-group class="tab-group">
+        <mat-tab label="Appointments">
+            <div class="appointments-container">
+                @for(appointment of patientData?.appointments; track appointment.date)
+                {
+                <appointment [appointmentInfo]="appointment">
+                </appointment>
+                }
+            </div>
+        </mat-tab>
+        <mat-tab label="Prescriptions">
+            <div class="prescriptions-container">
+                @for(prescription of patientData?.prescriptions; track prescription.name)
+                {
+                <prescription [name]="prescription.name" [start]="getDate(prescription.start)"
+                    [end]="getDate(prescription.end)" [refill]="prescription.refill">
+                </prescription>
+                }
+            </div>
+        </mat-tab>
+        <mat-tab label="Immunizations">
+            <div class="immunizations-container">
+                @for(immunization of patientData?.immunizations; track immunization.name)
+                {
+                <immunization [immunizationData]="immunization">
+                </immunization>
+                }
+            </div>
+        </mat-tab>
+    </mat-tab-group>
+</mat-card>

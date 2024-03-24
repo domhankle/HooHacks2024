@@ -7,8 +7,9 @@
     justify-content: flex-start;
     align-items: center;
 
+
     .patients-table-container {
-        width: 60%;
+        width: 70%;
 
     }
 
@@ -26,7 +27,7 @@
     .header {
         display: flex;
         justify-content: space-between;
-        width: 60%;
+        width: 70%;
         margin-bottom: 10px;
     }
 
@@ -49,4 +50,5 @@
     .table-row:active {
         background-color: map-get($neutral-palette, surface);
     }
+
 }

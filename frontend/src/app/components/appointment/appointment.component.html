@@ -1,0 +1,36 @@
+<span class="appointment-date title">{{getAppointmentDate() | date:'shortDate'}}</span>
+<div class="dr-info">
+    <span class="subtitle-font">Doctor:</span>
+    <span class="dr-name small-text">{{appointmentInfo?.doctor}}</span>
+</div>
+<div class="vitals-info">
+    <span class="subtitle-font">Vitals:</span>
+    <div class="weight-info">
+        <span class="small-text">
+            Weight:
+        </span>
+        <span class="weight small-text">{{appointmentInfo?.vitals?.weight}}</span>
+    </div>
+    <div class="height-info">
+        <span class="small-text">
+            Height:
+        </span>
+        <span class="height small-text">{{appointmentInfo?.vitals?.height}}</span>
+    </div>
+</div>
+<div class="reason-for-visit-info">
+    <span class="subtitle-font">
+        Reason for Visit:
+    </span>
+    <span class="reason-for-visit small-text">
+        {{appointmentInfo?.reasonForVisit}}
+    </span>
+</div>
+<div class="notes-info">
+    <span class="subtitle-font">
+        Notes:
+    </span>
+    <span class="notes small-text">
+        {{appointmentInfo?.notes}}
+    </span>
+</div>

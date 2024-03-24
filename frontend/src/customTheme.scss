@@ -1,0 +1,17 @@
+@import '~@angular/material/theming';
+@import './palettes.scss';
+@use '@angular/material' as mat;
+
+$my-primary: mat.define-palette(map-get($misc, accent));
+$my-accent: mat.define-palette(map-get($misc, accent));
+
+// The "warn" palette is optional and defaults to red if not specified.
+$my-warn: mat.define-palette(mat.$red-palette);
+
+$my-theme: mat.define-light-theme((color: (primary: $my-primary,
+                accent: $my-accent,
+                warn: $my-warn,
+            ),
+            typography: mat.define-typography-config(),
+            density: 0,
+        ));

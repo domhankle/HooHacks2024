@@ -1,0 +1,39 @@
+@import '../../../palettes.scss';
+
+:host {
+    background-color: map-get($misc, accent);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 10px;
+
+    .prescription-title {
+        font-size: smaller;
+    }
+
+    .prescription-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .time-range-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 2px;
+    }
+
+    .start-date,
+    .end-date,
+    .dash {
+        font-size: x-small;
+    }
+
+    .refill-indicator {
+        font-size: x-small;
+    }
+}

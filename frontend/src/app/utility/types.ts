@@ -2,8 +2,6 @@ import internal from "stream"
 
 export interface Patient {
     id: number,
-    username: string,
-    password: string,
     name: string,
     email: string,
     phoneNumber: string,
@@ -16,7 +14,7 @@ export interface Patient {
 
 export interface Appointment {
     date: number,
-    doctor: Doctor,
+    doctor: string,
     complete: boolean,
     vitals: Vitals,
     notes: string,
