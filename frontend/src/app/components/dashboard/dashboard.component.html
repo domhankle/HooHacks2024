@@ -2,6 +2,9 @@
     <button mat-button class="sign-out-button" (click)="signOut()">
         Sign Out
     </button>
+    <div class="owl-image-container">
+        <img class="owl-image" src="assets/owl.jpg">
+    </div>
 </div>
 
 @if(!viewingPatient)
@@ -11,6 +14,7 @@
         (ngModelChange)="onInputChange()">
     <h1 class="subtitle">Your Patients</h1>
 </div>
+
 
 <mat-card class="patients-table-container">
     <table class="patients-table" mat-table [dataSource]="paginatedData">
@@ -47,6 +51,10 @@
 }
 @else
 {
+<div class="back-button-container">
+    <button mat-button class="back-button" (click)="goBack()">
+        < Back </button>
+</div>
 <patient-chart class="patient-chart" [patientData]="patientShown">
 </patient-chart>
 }

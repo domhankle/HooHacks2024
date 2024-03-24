@@ -75,4 +75,8 @@ export class DashboardComponent {
     this.patientShown = patient;
     this.viewingPatient = true;
   }
+
+  public goBack(): void {
+    this.viewingPatient = false;
+  }
 }
