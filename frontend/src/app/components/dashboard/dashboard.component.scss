@@ -1,0 +1,33 @@
+@import '../../../styles.scss';
+@import '../../../palettes.scss';
+
+:host {
+    @include page;
+    justify-content: center;
+    align-items: center;
+
+    .patients-table-container {
+        width: 60%;
+
+    }
+
+    .header {
+        display: flex;
+        justify-content: flex-end;
+        width: 60%;
+        margin-bottom: 10px;
+    }
+
+    .table-header {
+        background-color: map-get($misc, accent);
+    }
+
+    .table-row:hover {
+        cursor: pointer;
+        background-color: map-get($misc, divider);
+    }
+
+    .table-row:active {
+        background-color: map-get($neutral-palette, surface);
+    }
+}

@@ -7,7 +7,7 @@ import { BehaviorSubject, Subject } from 'rxjs';
 })
 export class SingletonService {
 
-  currentUser: BehaviorSubject<Doctor | Patient> = new BehaviorSubject<Doctor | Patient>(
+  currentDoctor: BehaviorSubject<Doctor> = new BehaviorSubject<Doctor>(
     { id: -1, username: '', password: '', patients: [] }
   );
 
