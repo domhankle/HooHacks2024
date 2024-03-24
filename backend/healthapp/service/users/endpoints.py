@@ -16,12 +16,12 @@ def get_doctor(request):
     password = request.GET.get('password')
 
     try:
-        user = User.objects.get(username=username)
+        user = Doctor.objects.get(username=username)
         
         if user.password != password:
             raise ValueError
 
-        if is_doctor(user):
+        if user.patients.exists():
             patient_list = list(user.patients.all())
             patient_out = []
 
@@ -30,16 +30,16 @@ def get_doctor(request):
 
                 })
 
-            doctor = {
-                'username': user.username,
-                'password': user.password,
-                'patients': []
-            }
+        doctor = {
+            'username': user.username,
+            'password': user.password,
+            'patients': []
+        }
 
 
-            return JsonResponse({
-                'doctor':doctor
-            })
+        return JsonResponse({
+            'doctor':doctor
+        })
     except User.DoesNotExist:
         return JsonResponse({'error': 'User does not exist'}, status=404)
     except ValueError:

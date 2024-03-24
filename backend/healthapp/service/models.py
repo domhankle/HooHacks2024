@@ -23,7 +23,7 @@ class Appointment(models.Model):
     complete = models.BooleanField()
     vitals = models.OneToOneField('Vitals', on_delete=models.CASCADE, blank=True)
     notes = models.CharField(max_length=1000, blank=True)
-    reason_for_visit = models.CharField(max_length=100)
+    reason_for_visit = models.CharField(max_length=100, blank=True)
 
 class Vitals(models.Model):
     weight = models.CharField(max_length=100, blank=True)
