@@ -1,36 +1,42 @@
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from .models import User, Doctor, Patient
+from django.contrib.auth import authenticate, login
 import json
 
+def is_patient(user):
+    return hasattr(user, 'patient')
+
+def is_doctor(user):
+    return hasattr(user, 'doctor')
+
 @csrf_exempt
-def create_user(request):
+def get_doctor(request):
     data = json.loads(request.body)
-    req_username = data.get('username', '')
-    req_password = data.get('password', '')
-    req_role = data.get('role', '')
+    username = data.get('username')
+    password = data.get('password')
 
-    if User.objects.filter(username=req_username).exists():
-        return JsonResponse(
-                {'error':'User already exists!'},
-                status=404)
+    user = User.objects.get(username=username)
+    if user is None:
+        return JsonResponse({'error': 'Login failed'}, status=401)
+    elif is_doctor(user):
+        patient_list = list(user.patients.all())
+        patient_out = []
 
-    user_instance = User(username=req_username, password=req_password, role=req_role)
-    user_instance.save()
+        # for patient in patient_list:
+        #     patient_out.append({
 
-    if req_role == 'DOCTOR':
-        print('ROLE IS DOCTOR')
-        doctor_instance = Doctor(username=req_username)
-        doctor_instance.save()
+        #     })
 
-    if req_role == 'PATIENT':
-        patient_instance = Patient(username=req_username)
-        patient_instance.save()
+        doctor = {
+            'username': user.username,
+            'password': user.password,
+            'patients': []
+        }
 
-    return JsonResponse(
-            {'username': req_username,
-            'password':req_password,
-            'role':req_role,
-            'id':str(user_instance.pk)},
-            status=201)
 
+        return JsonResponse({
+            'doctor':doctor
+        })
+
+        
