@@ -39,6 +39,9 @@ body {
     min-height: 100vh;
     text-rendering: optimizeSpeed;
     line-height: 1.5;
+    background-color: map-get($neutral-palette, body);
+    overflow-x: hidden !important;
+    overflow-y: hidden !important;
 }
 
 /* A elements that don't have a class get default styles */
@@ -177,6 +180,7 @@ body {
 .owl-image-container {
     display: flex;
     width: 40px;
+    transition: transform 500ms ease-in-out
 }
 
 .owl-image {

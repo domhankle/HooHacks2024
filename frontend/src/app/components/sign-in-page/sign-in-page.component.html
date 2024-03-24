@@ -1,4 +1,4 @@
-<div class="sign-in-side">
+<div class="sign-in-side" [class.activate-sign-in]="loaded" [class.deactivate-sign-in]="!loaded">
     <div class="sign-in-form">
         <h1 class="title sign-in-form-title">Sign In</h1>
         <input class="username-input input-style" placeholder="Username" type="text" [(ngModel)]="username">
@@ -13,7 +13,7 @@
         </div>
     </div>
 </div>
-<div class="infographic-side">
+<div class="infographic-side" [class.activate-infographic]="loaded" [class.deactivate-infographic]="!loaded">
     <div class="title-container">
         <h1 class="title infographic-title">Health Hacks</h1>
         <span class="title-hint-text">Are You a Hospital Administrator?</span>

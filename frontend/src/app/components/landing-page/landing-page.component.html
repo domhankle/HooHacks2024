@@ -1,12 +1,12 @@
-<div class="header">
-    <div class="owl-image-container">
+<div class="header" [class.animate-header]="animateHeader">
+    <div class="owl-image-container" [class.animate-owl]="animateOwl" [class.animate-owl-scale]="animateHeader">
         <img class="owl-image" src="assets/owl.jpg">
     </div>
     <button (click)="goToSignIn()" mat-button class="sign-in-page-button">
         Sign In
     </button>
 </div>
-<div class="body">
+<div class="body" [class.animate-body]="animateHeader">
     <div class="title-container">
         <h1 class="title">Health Hacks</h1>
         <span class="title-hint-text">All your patient's information in one place</span>

@@ -7,12 +7,32 @@
 
     .sign-in-side,
     .infographic-side {
+        transition: transform 500ms ease-in-out;
         width: 50%;
         height: 100%;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+    }
+
+
+
+    .activate-sign-in {
+        transform: translateX(0px);
+    }
+
+    .deactivate-infographic {
+        transform: translate(100%);
+    }
+
+    .activate-infographic {
+        transform: translate(0);
+    }
+
+
+    .deactivate-sign-in {
+        transform: translateX(-100%);
     }
 
     .infographic-side {
