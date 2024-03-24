@@ -3,4 +3,4 @@ echo "Removing db..."
 
 rm ../backend/healthapp/db.sqlite3
 
-auto_migrate.sh
+./auto_migrate.sh

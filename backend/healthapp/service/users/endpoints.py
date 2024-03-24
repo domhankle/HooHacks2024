@@ -31,6 +31,7 @@ def get_doctor(request):
                 })
 
         doctor = {
+            'id': user.id,
             'username': user.username,
             'password': user.password,
             'patients': []
