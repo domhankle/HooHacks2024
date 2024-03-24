@@ -1,0 +1,98 @@
+@import '../../../styles.scss';
+@import '../../../palettes.scss';
+
+:host {
+    @include page;
+    flex-direction: row;
+
+    .sign-in-side,
+    .infographic-side {
+        width: 50%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .infographic-side {
+        background-color: map-get($misc, accent);
+        border-radius: 12px 0 0 12px;
+    }
+
+    .title-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .title-hint-text {
+        color: map-get($neutral-palette, text);
+    }
+
+    .sign-in-page-button {
+        @include white-button;
+        width: 80px;
+        height: 30px;
+
+        &-faq {
+            @include white-button;
+            width: 200px;
+        }
+
+        &-contact-us {
+            @include white-button;
+            width: 200px;
+        }
+    }
+
+    .extra-buttons-container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 20px;
+        gap: 20px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .sign-in-form {
+        width: 50%;
+        height: 60%;
+        background-color: map-get($misc, accent);
+        border-radius: 12px;
+        display: flex;
+        flex-direction: column;
+        padding: 20px 0;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .username-input,
+    .password-input {
+        width: 80%;
+    }
+
+
+
+    .sign-in-form-title {
+        margin-bottom: 20px;
+    }
+
+    .sign-in-form-title,
+    .infographic-title {
+        color: map-get($neutral-palette, dark-gray-text)
+    }
+
+    .button-sign-in-container {
+
+        width: 80%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        margin-top: 20px;
+
+    }
+}

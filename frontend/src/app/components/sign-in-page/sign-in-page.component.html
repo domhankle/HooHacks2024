@@ -1,0 +1,29 @@
+<div class="sign-in-side">
+    <div class="sign-in-form">
+        <h1 class="title sign-in-form-title">Sign In</h1>
+        <input class="username-input input-style" placeholder="Username" type="text" [(ngModel)]="username">
+        <input class="password-input input-style" placeholder="Password" type="password" [(ngModel)]="password">
+        <div class="button-sign-in-container">
+            <div class="owl-image-container">
+                <img class="owl-image" src="assets/owl.jpg">
+            </div>
+            <button mat-button class="sign-in-page-button" (click)="signIn()">
+                Sign In
+            </button>
+        </div>
+    </div>
+</div>
+<div class="infographic-side">
+    <div class="title-container">
+        <h1 class="title infographic-title">Health Hacks</h1>
+        <span class="title-hint-text">Are You a Hospital Administrator?</span>
+        <div class="extra-buttons-container">
+            <button mat-button class="sign-in-page-button-faq">
+                Admin Portal
+            </button>
+            <button mat-button class="sign-in-page-button-contact-us">
+                Register Your Hospital
+            </button>
+        </div>
+    </div>
+</div>
