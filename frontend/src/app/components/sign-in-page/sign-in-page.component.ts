@@ -2,6 +2,7 @@ import { Component, Inject } from '@angular/core';
 import { Material } from '../../utility/modules';
 import { LoginService } from '../../services/login.service';
 import { SingletonService } from '../../services/singleton.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'sign-in-page',
@@ -15,7 +16,8 @@ export class SignInPageComponent {
   public password = '';
 
   constructor(@Inject(LoginService) private _loginService: LoginService,
-    @Inject(SingletonService) private _singletonService: SingletonService) {
+    @Inject(SingletonService) private _singletonService: SingletonService,
+    @Inject(Router) private _router: Router) {
 
   }
 
@@ -26,6 +28,7 @@ export class SignInPageComponent {
         const doctor = { id: response.doctor.id, username: response.doctor.username, password: response.doctor.password, patients: response.doctor.patients };
         this._singletonService.currentDoctor.next(doctor);
         console.log("Currently Signed in User: ", this._singletonService.currentDoctor.value);
+        this._router.navigate(['dashboard']);
       },
       error => {
         console.log(error);

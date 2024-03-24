@@ -27,43 +27,43 @@ export class DashboardComponent {
   public constructor(@Inject(SingletonService) private _singletonService: SingletonService) {
     this.doctor = this._singletonService.currentDoctor.value;
 
-    this.doctor = {
-      id: 1,
-      username: 'joe',
-      password: 'lol',
-      patients: [
-        {
-          name: 'Patient 1',
-          email: 'joe@gmail.com',
-          phoneNumber: '757-276-9417',
-          address: '1800 Huckleberry Ln.'
-        },
-        {
-          name: 'Patient 1',
-          email: 'joe@gmail.com',
-          phoneNumber: '757-276-9417',
-          address: '1800 Huckleberry Ln.'
-        },
-        {
-          name: 'Patient 1',
-          email: 'joe@gmail.com',
-          phoneNumber: '757-276-9417',
-          address: '1800 Huckleberry Ln.'
-        },
-        {
-          name: 'Patient 1',
-          email: 'joe@gmail.com',
-          phoneNumber: '757-276-9417',
-          address: '1800 Huckleberry Ln.'
-        },
-        {
-          name: 'Patient 1',
-          email: 'joe@gmail.com',
-          phoneNumber: '757-276-9417',
-          address: '1800 Huckleberry Ln.'
-        },
-      ] as unknown as Patient[]
-    }
+    // this.doctor = {
+    //   id: 1,
+    //   username: 'joe',
+    //   password: 'lol',
+    //   patients: [
+    //     {
+    //       name: 'Patient 1',
+    //       email: 'joe@gmail.com',
+    //       phoneNumber: '757-276-9417',
+    //       address: '1800 Huckleberry Ln.'
+    //     },
+    //     {
+    //       name: 'Patient 1',
+    //       email: 'joe@gmail.com',
+    //       phoneNumber: '757-276-9417',
+    //       address: '1800 Huckleberry Ln.'
+    //     },
+    //     {
+    //       name: 'Patient 1',
+    //       email: 'joe@gmail.com',
+    //       phoneNumber: '757-276-9417',
+    //       address: '1800 Huckleberry Ln.'
+    //     },
+    //     {
+    //       name: 'Patient 1',
+    //       email: 'joe@gmail.com',
+    //       phoneNumber: '757-276-9417',
+    //       address: '1800 Huckleberry Ln.'
+    //     },
+    //     {
+    //       name: 'Patient 1',
+    //       email: 'joe@gmail.com',
+    //       phoneNumber: '757-276-9417',
+    //       address: '1800 Huckleberry Ln.'
+    //     },
+    //   ] as unknown as Patient[]
+    // }
 
     this.paginatedData = paginateData(this.doctor.patients, 0, 4);
   }
