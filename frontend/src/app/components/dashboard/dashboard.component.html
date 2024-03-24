@@ -1,5 +1,6 @@
 <div class="header">
-    <i class="fa fa-bars person"></i>
+    <input #input class="input-style search-bar" placeholder="Search For Patient..." [(ngModel)]="searchBarValue"
+        (ngModelChange)="onInputChange()">
     <h1 class="subtitle">Your Patients</h1>
 </div>
 
@@ -30,7 +31,7 @@
 
     </table>
 
-    <mat-paginator class="paginator" [length]="doctor.patients.length" [pageSizeOptions]="[4]"
+    <mat-paginator class="paginator" [length]="nonPaginatedData.length" [pageSizeOptions]="[4]"
         (page)="handlePaging($event)">
     </mat-paginator>
 </mat-card>
