@@ -14,4 +14,4 @@ password="$3"
 # Use variables in the curl command
 curl -X POST -H "Content-Type: application/json" \
      -d "{\"name\": \"$name\", \"username\": \"$username\", \"password\": \"$password\"}" \
-     http://localhost:8000/service/createDoctor | json
+     http://localhost:8000/service/createDoctor | jq
