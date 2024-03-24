@@ -3,12 +3,24 @@
 
 :host {
     @include page;
-    justify-content: center;
+    background-color: map-get($misc, divider);
+    justify-content: flex-start;
     align-items: center;
 
     .patients-table-container {
         width: 60%;
 
+    }
+
+    .sign-out-container {
+        width: 100%;
+        margin-bottom: 5px;
+        padding: 20px;
+    }
+
+    .sign-out-button {
+        @include neutral-button;
+        background-color: map-get($neutral-palette, surface);
     }
 
     .header {

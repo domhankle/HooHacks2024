@@ -1,3 +1,9 @@
+<div class="sign-out-container">
+    <button mat-button class="sign-out-button" (click)="signOut()">
+        Sign Out
+    </button>
+</div>
+
 <div class="header">
     <input #input class="input-style search-bar" placeholder="Search For Patient..." [(ngModel)]="searchBarValue"
         (ngModelChange)="onInputChange()">

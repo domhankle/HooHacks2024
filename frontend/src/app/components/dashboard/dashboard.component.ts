@@ -4,6 +4,7 @@ import { Doctor, Patient } from '../../utility/types';
 import { SingletonService } from '../../services/singleton.service';
 import { paginateData } from '../../utility/functions';
 import { PageEvent } from '@angular/material/paginator';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'dashboard',
@@ -30,47 +31,9 @@ export class DashboardComponent {
   public pageSize = 4;
 
 
-  public constructor(@Inject(SingletonService) private _singletonService: SingletonService) {
+  public constructor(@Inject(SingletonService) private _singletonService: SingletonService,
+    @Inject(Router) private _router: Router) {
     this.doctor = this._singletonService.currentDoctor.value;
-
-
-    this.doctor = {
-      id: 1,
-      username: 'joe',
-      password: 'lol',
-      patients: [
-        {
-          name: 'Joe',
-          email: 'joe@gmail.com',
-          phoneNumber: '757-276-9417',
-          address: '1800 Huckleberry Ln.'
-        },
-        {
-          name: 'Carl',
-          email: 'joe@gmail.com',
-          phoneNumber: '757-276-9417',
-          address: '1800 Huckleberry Ln.'
-        },
-        {
-          name: 'Kathy',
-          email: 'joe@gmail.com',
-          phoneNumber: '757-276-9417',
-          address: '1800 Huckleberry Ln.'
-        },
-        {
-          name: 'Kate',
-          email: 'joe@gmail.com',
-          phoneNumber: '757-276-9417',
-          address: '1800 Huckleberry Ln.'
-        },
-        {
-          name: 'Paris',
-          email: 'joe@gmail.com',
-          phoneNumber: '757-276-9417',
-          address: '1800 Huckleberry Ln.'
-        },
-      ] as unknown as Patient[]
-    }
 
     this.nonPaginatedData = [...this.doctor.patients];
 
@@ -99,5 +62,10 @@ export class DashboardComponent {
     }
 
     this.paginatedData = paginateData(this.nonPaginatedData, this.pageIndex, this.pageSize);
+  }
+
+  public signOut(): void {
+    this._singletonService.currentDoctor.next({ id: -1, username: '', password: '', patients: [] });
+    this._router.navigate(['sign-in']);
   }
 }
